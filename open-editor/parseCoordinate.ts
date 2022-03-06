@@ -3,11 +3,11 @@ interface Coordinate {
   y: number;
 }
 
-function parseCoordinate(obj: Coordinate): Coordinate;
-function parseCoordinate(str: string): Coordinate;
 function parseCoordinate(x: number, y: number): Coordinate;
+function parseCoordinate(obj: object): Coordinate;
+function parseCoordinate(str: string): Coordinate;
 function parseCoordinate(arg1: unknown, arg2?: unknown): Coordinate {
-  let coord: Coordinate = {
+  let coord = {
     x: 0,
     y: 0,
   };
@@ -30,6 +30,6 @@ function parseCoordinate(arg1: unknown, arg2?: unknown): Coordinate {
   return coord;
 }
 
-console.log(parseCoordinate(10, 20));
-console.log(parseCoordinate({ x: 52, y: 35 }));
-console.log(parseCoordinate("x:1,y:2"));
+console.log(parseCoordinate(1, 2));
+console.log(parseCoordinate({ x: 2, y: 3 }));
+console.log(parseCoordinate("x:10,y:20"));
