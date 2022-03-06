@@ -1,8 +1,8 @@
 "use strict";
 exports.__esModule = true;
 exports.getName =
+  exports.introduce =
   exports.fetchData =
-  exports.printFormat =
   exports.format =
   exports.addStrings =
     void 0;
@@ -11,9 +11,6 @@ function add(a, b) {
 }
 exports["default"] = add;
 var addStrings = function (str1, str2) {
-  if (str2 === void 0) {
-    str2 = "";
-  }
   return "".concat(str1, " ").concat(str2);
 };
 exports.addStrings = addStrings;
@@ -21,25 +18,19 @@ var format = function (title, param) {
   return "".concat(title, " ").concat(param);
 };
 exports.format = format;
-//void function
-var printFormat = function (title, param) {
-  console.log((0, exports.format)(title, param));
-};
-exports.printFormat = printFormat;
-//promise function
 var fetchData = function (url) {
-  return Promise.resolve("Data from ".concat(url));
+  return Promise.resolve("Data fetched from ".concat(url));
 };
 exports.fetchData = fetchData;
-//rest parameters
-function introduce(salutation) {
+var introduce = function (salutation) {
   var names = [];
   for (var _i = 1; _i < arguments.length; _i++) {
     names[_i - 1] = arguments[_i];
   }
   return "".concat(salutation, " ").concat(names.join(" "));
-}
-function getName(user) {
-  return "".concat(user?.first ?? "first", " ").concat(user?.last ?? "second");
-}
+};
+exports.introduce = introduce;
+var getName = function (first, last) {
+  return "".concat(first ?? "first", " ").concat(last ?? "last");
+};
 exports.getName = getName;

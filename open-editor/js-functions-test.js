@@ -1,3 +1,3 @@
-const { getName } = require("./functions.js");
+const { getName } = require("./functions");
 
-console.log(getName({ first: "Yehezkel", last: "Wiradhika" }));
+console.log(getName());

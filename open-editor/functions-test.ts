@@ -1,6 +1,7 @@
-import add, { addStrings, getName } from "./functions";
+import add, { addStrings, format } from "./functions";
 
 console.log(add(1, 2));
-console.log(addStrings("Hello", "World"));
 
-console.log(getName({ first: "Yehezkel", last: "Wiradhika" }));
+console.log(addStrings("first", "second"));
+
+console.log(format("first", 2));
