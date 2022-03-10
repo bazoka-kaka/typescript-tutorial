@@ -6,18 +6,18 @@ function pluck<Datatype, Keytype extends keyof Datatype>(
 }
 
 const dogs = [
-  { name: "Mimi", age: 12 },
-  { name: "Little Guy", age: 13 },
+  { name: "Amanda", age: 20 },
+  { name: "Bruce", age: 10 },
 ];
 
 console.log(pluck(dogs, "age"));
 console.log(pluck(dogs, "name"));
 
-//Event map
 interface BaseEvent {
-  time: number;
   user: string;
+  time: number;
 }
+
 interface EventMap {
   addToCart: BaseEvent & { quantity: number; productID: string };
   checkout: BaseEvent;
@@ -31,9 +31,8 @@ function sendEvent<Name extends keyof EventMap>(
 }
 
 sendEvent("addToCart", {
-  productID: "foo",
-  user: "Baz",
-  quantity: 1,
+  user: "Yehezkel",
   time: 10,
+  quantity: 1,
+  productID: "s01",
 });
-sendEvent("checkout", { time: 20, user: "Bob" });
