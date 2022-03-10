@@ -1,13 +1,13 @@
 function printIngridients(
   quantity: string,
-  ingridient: string,
+  ingridients: string,
   extra?: string
-) {
-  console.log(`${quantity} ${ingridient} ${extra ? extra : ""}`);
+): void {
+  console.log(`${quantity} ${ingridients} ${extra ? extra : ""}`);
 }
 
-printIngridients("1C", "Flour");
-printIngridients("1C", "Sugar", "something else");
+printIngridients("Hello", "World");
+printIngridients("Hello", "World", "to Me");
 
 interface User {
   id: string;
@@ -16,21 +16,18 @@ interface User {
   };
 }
 
-function getEmail(user: User): string {
+function getHardEmail(user: User): string {
   if (user.info) {
-    return user.info.email!;
+    return user.info!.email!;
   }
   return "";
 }
 
-function getEmailEasy(user: User): string {
+function getEmail(user: User): string {
   return user?.info?.email ?? "";
 }
 
-function addWithCallback(x: number, y: number, callback?: () => void) {
+function addWithCallbacks(x: number, y: number, callback?: () => void) {
   console.log([x, y]);
-  // if (callback) {
-  //   callback();
-  // }
   callback?.();
 }

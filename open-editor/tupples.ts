@@ -7,7 +7,7 @@ function addThreeDCoordinate(
   return [c1[0] + c2[0], c1[1] + c2[1], c1[2] + c2[2]];
 }
 
-console.log(addThreeDCoordinate([1, 2, 3], [2, 3, 4]));
+console.log(addThreeDCoordinate([1, 2, 3], [4, 5, 6]));
 
 function simpleStringState(
   initial: string
@@ -21,7 +21,7 @@ function simpleStringState(
   ];
 }
 
-const [str1Getter, str1Setter] = simpleStringState("Hello");
-console.log(str1Getter());
-str1Setter("goodbye!");
-console.log(str1Getter());
+const [str, setStr] = simpleStringState("Hello");
+console.log(str());
+setStr("Goodbye");
+console.log(str());
